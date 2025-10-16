@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Essential meta tags for modern web development -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>Alternative Resume Layout - CVVW 2025-2026</title>
+	<meta name="description" content="A second example demonstrating different content with the same CSS Grid layout">
+	
+	<link href="all_together.css" rel="stylesheet" type="text/css">
+	
+	<!-- Google Fonts with modern loading practices -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<!-- Main Container -->
+	<!-- This file demonstrates how the same CSS can be used for different content -->
+	<div class="wrapper">
+		<div class="content">
+			
+			<!-- Header Section -->
+			<header class="box head">
+				<h1>Prof. Dr. Maria Rodriguez</h1>
+				<p class="subtitle">Associate Professor of Digital Media</p>
+			</header>
+			
+			<!-- Sidebar with Personal Information -->
+			<aside class="box sidebar">
+				<!-- Profile Image -->
+				<div class="personalimage">
+					<img src="professor.JPG" alt="Professional headshot of Prof. Dr. Maria Rodriguez">
+					<!-- Same image used for demonstration - in practice, each person would have their own photo -->
+				</div>
+				
+				<!-- Personal Details -->
+				<div class="personaldetails">
+					<div class="personaldetailitem">
+						<strong>Prof. Dr. Maria Rodriguez</strong>
+					</div>
+					<div class="personaldetailitem">
+						<span class="label">Born:</span> August 22, 1980
+					</div>
+					<div class="personaldetailitem">
+						<span class="label">Location:</span> Brussels, Belgium
+					</div>
+					<div class="personaldetailitem">
+						<span class="label">Email:</span> m.rodriguez@ugent.be
+					</div>
+				</div>
+				
+				<!-- Skills Section -->
+				<div class="skills-section">
+					<h3>Expertise Areas</h3>
+					<ul class="skills-list">
+						<li>User Experience Design</li>
+						<li>Digital Accessibility</li>
+						<li>Interactive Media</li>
+						<li>Design Research</li>
+					</ul>
+				</div>
+			</aside>
+			
+			<!-- Main Content Area -->
+			<main class="box experience">
+				<h2>Academic & Professional Experience</h2>
+				
+				<!-- Experience Item 1 -->
+				<article class="experienceitem">
+					<div class="experienceheader">
+						<span class="experiencedate">2018 - Present</span>
+						<span class="experiencetitle">Associate Professor at UGent</span>
+					</div>
+					<div class="experienceitemcontent">
+						<p>Leading research in digital media and user experience design. Teaching undergraduate and graduate courses in interactive design and conducting research on accessibility in digital interfaces.</p>
+						
+						<h4>Research Focus:</h4>
+						<ul>
+							<li>Inclusive design methodologies</li>
+							<li>Adaptive user interfaces</li>
+							<li>Cross-cultural usability studies</li>
+							<li>Emerging interaction paradigms</li>
+						</ul>
+					</div>
+				</article>
+				
+				<!-- Experience Item 2 -->
+				<article class="experienceitem">
+					<div class="experienceheader">
+						<span class="experiencedate">2014 - 2018</span>
+						<span class="experiencetitle">Senior UX Designer at TechCorp</span>
+					</div>
+					<div class="experienceitemcontent">
+						<p>Led design teams in creating user-centered digital products. Specialized in accessibility compliance and inclusive design practices for enterprise software solutions.</p>
+						
+						<h4>Key Projects:</h4>
+						<ul>
+							<li>Enterprise dashboard redesign (500K+ users)</li>
+							<li>Mobile accessibility framework</li>
+							<li>Design system implementation</li>
+							<li>User research methodology development</li>
+						</ul>
+					</div>
+				</article>
+				
+				<!-- Publications Section -->
+				<section class="education-section">
+					<h2>Recent Publications</h2>
+					<div class="experienceitem">
+						<div class="experienceheader">
+							<span class="experiencedate">2024</span>
+							<span class="experiencetitle">"Adaptive Interfaces for Diverse Users"</span>
+						</div>
+						<div class="experienceitemcontent">
+							<p><strong>Journal of Human-Computer Interaction</strong> - A comprehensive study on creating interfaces that adapt to user needs and capabilities.</p>
+						</div>
+					</div>
+					
+					<div class="experienceitem">
+						<div class="experienceheader">
+							<span class="experiencedate">2023</span>
+							<span class="experiencetitle">"Cross-Cultural Design Patterns"</span>
+						</div>
+						<div class="experienceitemcontent">
+							<p><strong>International Conference on Design</strong> - Research on how cultural context influences digital interface design preferences.</p>
+						</div>
+					</div>
+				</section>
+			</main>
+			
+			<!-- Footer -->
+			<footer class="box foot">
+				<div class="footer-content">
+					<p>&copy; 2025 Prof. Dr. Maria Rodriguez</p>
+					<p><small>Demonstrating reusable CSS layouts with different content</small></p>
+				</div>
+			</footer>
+		</div>
+	</div>
+	
+	<!-- Educational Information -->
+	<section class="learning-notes">
+		<h2>CSS Reusability Demonstration</h2>
+		<div class="note-grid">
+			<div class="note-item">
+				<h3>Same CSS, Different Content</h3>
+				<p>This page uses the exact same CSS file as all_together.html but with completely different content, demonstrating the power of semantic HTML and well-structured CSS.</p>
+			</div>
+			<div class="note-item">
+				<h3>Maintainable Code</h3>
+				<p>By separating content from presentation, you can easily update the design of multiple pages by modifying just one CSS file.</p>
+			</div>
+			<div class="note-item">
+				<h3>Consistent Design</h3>
+				<p>Using the same CSS ensures visual consistency across different pages while allowing for unique content on each page.</p>
+			</div>
+			<div class="note-item">
+				<h3>Scalable Architecture</h3>
+				<p>This approach scales well for larger websites where you need consistent styling across many different pages and content types.</p>
+			</div>
+		</div>
+	</section>
+
+</body>
+
+</html>

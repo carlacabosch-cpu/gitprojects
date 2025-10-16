@@ -1,0 +1,428 @@
+/* Modern CSS Reset and Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8fafc;
+}
+
+/* CSS Grid Container with Named Areas */
+.wrapper {
+  display: grid;
+  
+  /* Define the gaps between grid items */
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
+  
+  /* Mobile-First: Single Column Layout */
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto auto; /* Let content determine height */
+  
+  /* Mobile Grid Template Areas */
+  /* Each quoted string represents a row in the grid */
+  /* Each word in the string represents a column */
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "sidebar"
+    "ads"
+    "footer";
+  
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tablet Layout: 768px and up */
+@media screen and (min-width: 768px) {
+  .wrapper {
+    /* Two-column layout for tablets */
+    grid-template-columns: 1fr 1fr;
+    
+    /* Redefine the grid areas for tablet layout */
+    grid-template-areas:
+      "header  header"   /* Header spans both columns */
+      "nav     nav"      /* Navigation spans both columns */
+      "main    sidebar"  /* Main content and sidebar side by side */
+      "main    ads"      /* Main content continues, ads on the right */
+      "footer  footer";  /* Footer spans both columns */
+  }
+}
+
+/* Desktop Layout: 1024px and up */
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    /* Three-column layout for desktop */
+    grid-template-columns: 200px 1fr 250px; /* Fixed sidebar widths, flexible main */
+    
+    /* Desktop grid template areas */
+    /* This creates a classic web layout */
+    grid-template-areas:
+      "header  header  header"   /* Header spans all three columns */
+      "nav     main    sidebar"  /* Navigation, main content, sidebar */
+      "nav     main    ads"      /* Navigation continues, main content, ads */
+      "footer  footer  footer";  /* Footer spans all three columns */
+  }
+}
+
+/* Large Desktop Layout: 1400px and up */
+@media screen and (min-width: 1400px) {
+  .wrapper {
+    /* Four-column layout for very large screens */
+    grid-template-columns: 200px 1fr 250px 200px;
+    
+    grid-template-areas:
+      "header  header  header  header"
+      "nav     main    sidebar ads"
+      "nav     main    sidebar ads"
+      "footer  footer  footer  footer";
+  }
+}
+
+/* Grid Area Assignments */
+/* Each element is assigned to a named grid area using grid-area */
+
+.head {
+  grid-area: header; /* Assigns this element to the "header" area */
+}
+
+.navigation {
+  grid-area: nav; /* Assigns this element to the "nav" area */
+}
+
+.personaldetails {
+  grid-area: sidebar; /* Assigns this element to the "sidebar" area */
+}
+
+.experience {
+  grid-area: main; /* Assigns this element to the "main" area */
+}
+
+.advertisements {
+  grid-area: ads; /* Assigns this element to the "ads" area */
+}
+
+.foot {
+  grid-area: footer; /* Assigns this element to the "footer" area */
+}
+
+/* Base Grid Item Styling */
+.box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.box:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Specific Area Styling */
+
+/* Header Styling */
+.head {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+
+.head h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.head p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+/* Navigation Styling */
+.navigation {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.navigation h3 {
+  margin-top: 0;
+  color: #744210;
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+}
+
+.navigation li {
+  margin-bottom: 0.5rem;
+}
+
+.navigation a {
+  color: #744210;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: block;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.navigation a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Sidebar Styling */
+.personaldetails {
+  background-color: #f7fafc;
+  border-left: 4px solid #4299e1;
+}
+
+.widget {
+  margin-bottom: 1.5rem;
+}
+
+.widget:last-child {
+  margin-bottom: 0;
+}
+
+.widget h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+  font-size: 1rem;
+}
+
+.widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.widget li {
+  padding: 0.25rem 0;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+/* Main Content Styling */
+.experience {
+  background-color: #ffffff;
+}
+
+.experience h2 {
+  margin-top: 0;
+  color: #2d3748;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+.experience section {
+  margin-bottom: 2rem;
+}
+
+.experience h3 {
+  color: #4a5568;
+  margin-bottom: 0.75rem;
+}
+
+.experience ol {
+  padding-left: 1.5rem;
+}
+
+.experience li {
+  margin-bottom: 0.5rem;
+}
+
+/* Advertisements/Feature Area Styling */
+.advertisements {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.feature-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.feature-card:last-child {
+  margin-bottom: 0;
+}
+
+.feature-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+/* Footer Styling */
+.foot {
+  background-color: #2d3748;
+  color: white;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0.25rem 0;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  margin-top: 0;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+}
+
+/* Links */
+a {
+  color: #3182ce;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #2c5aa0;
+}
+
+a:focus {
+  outline: 2px solid #3182ce;
+  outline-offset: 2px;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Educational Information Section */
+.info-section {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 2rem;
+  background-color: #edf2f7;
+  border-radius: 12px;
+  border-left: 4px solid #3182ce;
+}
+
+.info-section h2 {
+  color: #2d3748;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.code-example {
+  background-color: #1a202c;
+  color: #e2e8f0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
+.code-example h3 {
+  color: #e2e8f0;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.code-example pre {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.code-example code {
+  color: #68d391;
+}
+
+.explanation h3 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.explanation ul {
+  padding-left: 1.5rem;
+}
+
+.explanation li {
+  margin-bottom: 0.75rem;
+}
+
+.explanation strong {
+  color: #2d3748;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+  
+  .wrapper {
+    gap: 1rem;
+  }
+  
+  .box {
+    padding: 1rem;
+  }
+  
+  .info-section {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .code-example {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "sidebar"
+      "ads"
+      "footer";
+    gap: 1rem;
+  }
+  
+  .box {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+  
+  .info-section {
+    break-inside: avoid;
+  }
+}

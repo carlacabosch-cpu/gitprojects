@@ -1,0 +1,429 @@
+/* Modern CSS Reset and Base Styles */
+* {
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+html {
+  /* Set base font size for rem calculations */
+  font-size: 16px;
+  /* Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  /* Modern font stack with fallbacks */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6; /* Improves readability */
+  color: #2d3748; /* Dark gray for better readability than pure black */
+  background-color: #f7fafc; /* Light background */
+}
+
+/* Main Container */
+.wrapper {
+  max-width: 1000px; /* Reasonable maximum width */
+  margin: 0 auto; /* Center the container */
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure rounded corners work properly */
+}
+
+/* CSS Grid Layout Container */
+.content {
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 2rem;
+  padding: 2rem;
+  
+  /* Mobile-First: Single Column Layout */
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto; /* Let content determine height */
+  
+  /* Mobile Grid Areas */
+  grid-template-areas:
+    "head"
+    "side"
+    "main"
+    "foot";
+}
+
+/* Responsive Typography */
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem); /* Responsive font size */
+  font-weight: 700;
+  margin: 0;
+  color: #1a202c;
+}
+
+h2 {
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  color: #2d3748;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #4a5568;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 1rem 0 0.5rem 0;
+  color: #4a5568;
+}
+
+/* Tablet Layout: 768px and up */
+@media screen and (min-width: 768px) {
+  body {
+    padding: 3rem;
+  }
+  
+  .content {
+    grid-template-columns: 1fr 2fr; /* Sidebar and main content */
+    grid-template-areas:
+      "head head"  /* Header spans both columns */
+      "side main"  /* Sidebar and main content side by side */
+      "foot foot"; /* Footer spans both columns */
+  }
+  
+  h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+/* Desktop Layout: 1024px and up */
+@media screen and (min-width: 1024px) {
+  .content {
+    grid-template-columns: 300px 1fr; /* Fixed sidebar width, flexible main */
+    padding: 3rem;
+  }
+}
+
+/* Grid Area Assignments */
+.head {
+  grid-area: head;
+}
+
+.sidebar {
+  grid-area: side;
+}
+
+.experience {
+  grid-area: main;
+}
+
+.foot {
+  grid-area: foot;
+}
+
+/* Base Grid Item Styling */
+.box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  /* Subtle borders instead of heavy shadows for modern look */
+  border: 1px solid #e2e8f0;
+}
+
+/* Header Styling */
+.head {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  border: none; /* Remove border for header */
+}
+
+.subtitle {
+  margin: 0.5rem 0 0 0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  background-color: #f8fafc;
+  border-left: 4px solid #667eea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Profile Image */
+.personalimage {
+  margin-bottom: 1.5rem;
+}
+
+.personalimage img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  border: 3px solid #ffffff;
+  border-radius: 50%; /* Circular profile image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover; /* Ensure proper image scaling */
+}
+
+/* Personal Details */
+.personaldetails {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.personaldetailitem {
+  font-size: 0.95rem; /* Fixed: was "16x" which is invalid */
+  font-weight: 500;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+}
+
+.label {
+  color: #4a5568;
+  font-weight: 400;
+}
+
+/* Skills Section */
+.skills-section {
+  width: 100%;
+}
+
+.skills-section h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  background-color: rgba(102, 126, 234, 0.1);
+  color: #4c51bf;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Main Content Area */
+.experience {
+  background-color: #ffffff;
+}
+
+/* Experience Items */
+.experienceitem {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.experienceitem:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.experienceheader {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.experiencedate {
+  background-color: #edf2f7;
+  font-size: 0.9rem; /* Fixed: was "16x" which is invalid */
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  color: #4a5568;
+  white-space: nowrap;
+}
+
+.experiencetitle {
+  font-size: 1.1rem; /* Fixed: was "16x" which is invalid */
+  font-weight: 600;
+  color: #2d3748;
+  flex: 1;
+  min-width: 200px;
+}
+
+.experienceitemcontent {
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.experienceitemcontent p {
+  margin: 0 0 1rem 0;
+}
+
+.experienceitemcontent ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.experienceitemcontent li {
+  margin-bottom: 0.25rem;
+}
+
+/* Education Section */
+.education-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e2e8f0;
+}
+
+/* Footer Styling */
+.foot {
+  background-color: #2d3748;
+  color: white;
+  text-align: center;
+  border: none;
+}
+
+.footer-content p {
+  margin: 0.25rem 0;
+}
+
+/* Links */
+a {
+  color: #3182ce;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: #3182ce;
+}
+
+a:focus {
+  outline: 2px solid #3182ce;
+  outline-offset: 2px;
+}
+
+/* Educational Learning Notes Section */
+.learning-notes {
+  max-width: 1000px;
+  margin: 3rem auto 0;
+  padding: 2rem;
+  background-color: #edf2f7;
+  border-radius: 12px;
+  border-left: 4px solid #3182ce;
+}
+
+.learning-notes h2 {
+  color: #2d3748;
+  margin-top: 0;
+  text-align: center;
+}
+
+.note-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .note-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.note-item {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.note-item h3 {
+  color: #2d3748;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.note-item p {
+  margin: 0;
+  color: #4a5568;
+  line-height: 1.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .content {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .box {
+    padding: 1rem;
+  }
+  
+  .experienceheader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .experiencetitle {
+    min-width: auto;
+  }
+  
+  .learning-notes {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background-color: white;
+    padding: 0;
+  }
+  
+  .wrapper {
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "head"
+      "side"
+      "main"
+      "foot";
+    padding: 1rem;
+  }
+  
+  .box {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+  }
+  
+  .learning-notes {
+    display: none; /* Hide educational notes in print */
+  }
+}

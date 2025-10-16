@@ -1,0 +1,109 @@
+/* CSS Reset and Base Styles */
+/* Modern CSS often starts with a reset to ensure consistent styling across browsers */
+* {
+  box-sizing: border-box; /* Makes padding and border included in element's total width/height */
+}
+
+body {
+  margin: 0; /* Remove default browser margins */
+  padding: 20px; /* Add consistent padding */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* System font stack provides native look on each operating system */
+  line-height: 1.6; /* Improves readability */
+  color: #333; /* Dark gray is easier on eyes than pure black */
+  background-color: #ffffff; /* Clean white background */
+}
+
+/* Heading Styles */
+h1 {
+  color: #2c3e50; /* Professional dark blue-gray */
+  text-align: center;
+  margin-bottom: 2rem; /* Use rem units for scalable spacing */
+  font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsive font size */
+}
+
+/* Class Selector Example */
+.coolparagraph {
+  /* Modern CSS uses logical properties and better color choices */
+  padding: 1.5rem; /* rem units scale with user's font size preferences */
+  background-color: #e8f4fd; /* Light blue background - much more accessible */
+  color: #1a365d; /* Dark blue text with good contrast ratio */
+  max-width: 800px; /* Prevents text lines from becoming too long */
+  margin: 1rem auto; /* Centers the element and adds vertical spacing */
+  
+  /* Modern font stack */
+  font-family: Georgia, 'Times New Roman', serif; /* Serif fonts are good for reading */
+  font-size: 1.1rem; /* Slightly larger than default for better readability */
+  
+  /* Modern styling techniques */
+  border-radius: 8px; /* Subtle rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-left: 4px solid #3182ce; /* Accent border for visual interest */
+  
+  /* Smooth transitions for interactive elements */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect for interactive feedback */
+.coolparagraph:hover {
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* List Styling */
+ul, ol {
+  max-width: 600px;
+  margin: 1.5rem auto;
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+/* Link Styling */
+a {
+  color: #3182ce; /* Accessible blue color */
+  text-decoration: underline; /* Underlines help identify links */
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #2c5aa0; /* Darker blue on hover */
+}
+
+a:focus {
+  outline: 2px solid #3182ce; /* Visible focus indicator for accessibility */
+  outline-offset: 2px;
+}
+
+/* Image Styling */
+img {
+  max-width: 100%; /* Responsive images */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 4px; /* Subtle rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Footer Styling */
+footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px; /* Less padding on mobile */
+  }
+  
+  .coolparagraph {
+    font-size: 1rem; /* Slightly smaller text on mobile */
+    padding: 1rem; /* Less padding on mobile */
+  }
+}

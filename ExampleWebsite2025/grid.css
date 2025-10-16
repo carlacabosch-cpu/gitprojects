@@ -1,0 +1,171 @@
+/* Modern CSS Reset and Base Styles */
+* {
+  box-sizing: border-box; /* Include padding and border in element's total width/height */
+}
+
+body {
+  margin: 0;
+  padding: 2rem; /* Use rem units for scalable spacing */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6; /* Improves text readability */
+  color: #333;
+  background-color: #f8fafc; /* Light background for better contrast */
+}
+
+/* CSS Grid Container */
+.wrapper {
+  display: grid; /* This creates a grid container */
+  
+  /* Grid Column Definition */
+  /* 1fr means "1 fraction" - each column gets equal space */
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+  /* Alternative syntax: grid-template-columns: 1fr 1fr 1fr; */
+  
+  /* Grid Gaps */
+  gap: 1.5rem; /* Modern shorthand for both row-gap and column-gap */
+  /* Replaces the older grid-gap property */
+  
+  /* Container Constraints */
+  max-width: 1200px; /* Prevents grid from becoming too wide */
+  margin: 0 auto; /* Centers the grid container */
+}
+
+/* Grid Items Styling */
+.box {
+  /* Visual Styling */
+  background-color: #ffffff; /* White background for contrast */
+  color: #2d3748; /* Dark gray text for good readability */
+  border-radius: 12px; /* Modern rounded corners */
+  padding: 1.5rem; /* Internal spacing */
+  
+  /* Modern Shadow */
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06); /* Subtle layered shadow */
+  
+  /* Border */
+  border: 1px solid #e2e8f0; /* Subtle border */
+  
+  /* Typography */
+  font-size: 1rem; /* Base font size */
+  
+  /* Smooth Transitions */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Interactive States */
+.box:hover {
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.06); /* Enhanced shadow on hover */
+}
+
+/* Specific Grid Item Styling */
+.box.a {
+  /* First grid item - could span multiple columns if needed */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+}
+
+.box.a h1 {
+  margin: 0;
+  font-size: clamp(1.2rem, 3vw, 1.8rem); /* Responsive font size */
+}
+
+/* Headings within grid items */
+.box h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #4a5568;
+  font-size: 1.1rem;
+}
+
+/* Lists within grid items */
+.box ul,
+.box ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.box li {
+  margin-bottom: 0.25rem;
+}
+
+/* Images within grid items */
+.box img {
+  max-width: 100%; /* Responsive images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners */
+  display: block; /* Remove inline spacing */
+  margin: 0.5rem 0; /* Vertical spacing */
+}
+
+/* Special paragraph styling */
+.coolparagraph {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #ed8936;
+  margin: 0;
+  font-weight: 500;
+  color: #744210;
+}
+
+/* Links styling */
+a {
+  color: #3182ce;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: #3182ce;
+}
+
+a:focus {
+  outline: 2px solid #3182ce;
+  outline-offset: 2px;
+}
+
+/* Footer styling */
+footer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #edf2f7;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem; /* Less padding on mobile */
+  }
+  
+  .wrapper {
+    /* Switch to single column on mobile */
+    grid-template-columns: 1fr;
+    gap: 1rem; /* Smaller gaps on mobile */
+  }
+  
+  .box {
+    padding: 1rem; /* Less padding on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    gap: 0.75rem; /* Even smaller gaps on very small screens */
+  }
+  
+  .box {
+    padding: 0.75rem;
+    font-size: 0.9rem; /* Slightly smaller text */
+  }
+}

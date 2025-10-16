@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Essential meta tags for modern web development -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>CSS Grid Named Areas - CVVW 2025-2026</title>
+	<meta name="description" content="Learn advanced CSS Grid layout using named grid areas">
+	
+	<link href="named_grid_areas.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<!-- Named Grid Areas Container -->
+	<!-- This demonstrates CSS Grid's most powerful feature: named grid areas -->
+	<!-- Named areas make complex layouts much easier to understand and maintain -->
+	<div class="wrapper">
+		
+		<!-- Header Area -->
+		<!-- The CSS will assign this to the "header" grid area -->
+		<header class="box head">
+			<h1>CSS Grid Named Areas</h1>
+			<p>This layout uses named grid areas for intuitive layout control</p>
+		</header>
+		
+		<!-- Navigation Area -->
+		<!-- The CSS will assign this to the "nav" grid area -->
+		<nav class="box navigation">
+			<h3>Navigation</h3>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		
+		<!-- Sidebar Area -->
+		<!-- The CSS will assign this to the "sidebar" grid area -->
+		<aside class="box personaldetails">
+			<h3>Sidebar Content</h3>
+			<div class="widget">
+				<h4>Quick Links</h4>
+				<ul>
+					<li>Documentation</li>
+					<li>Tutorials</li>
+					<li>Examples</li>
+				</ul>
+			</div>
+			<div class="widget">
+				<h4>Recent Updates</h4>
+				<p>CSS Grid continues to evolve with new features and better browser support.</p>
+			</div>
+		</aside>
+		
+		<!-- Main Content Area -->
+		<!-- The CSS will assign this to the "main" grid area -->
+		<main class="box experience">
+			<h2>Understanding Named Grid Areas</h2>
+			
+			<section>
+				<h3>What are Named Grid Areas?</h3>
+				<p>Named grid areas allow you to assign names to sections of your grid layout. This makes your CSS more readable and your layouts easier to modify.</p>
+			</section>
+			
+			<section>
+				<h3>Benefits of Named Areas</h3>
+				<ol>
+					<li><strong>Readability:</strong> Your CSS clearly shows the layout structure</li>
+					<li><strong>Maintainability:</strong> Easy to modify layouts by changing the grid-template-areas</li>
+					<li><strong>Responsive Design:</strong> Different layouts for different screen sizes</li>
+					<li><strong>Visual Mapping:</strong> The CSS visually represents your layout</li>
+				</ol>
+			</section>
+			
+			<section>
+				<h3>Example Layout Structure</h3>
+				<p>This page demonstrates a classic web layout with header, navigation, sidebar, main content, and footer areas. Notice how the layout changes on different screen sizes.</p>
+			</section>
+		</main>
+		
+		<!-- Advertisement/Feature Area -->
+		<!-- The CSS will assign this to the "ads" grid area -->
+		<section class="box advertisements">
+			<h3>Featured Content</h3>
+			<div class="feature-card">
+				<h4>CSS Grid Resources</h4>
+				<p>Explore more advanced CSS Grid techniques and examples.</p>
+			</div>
+			<div class="feature-card">
+				<h4>Responsive Design</h4>
+				<p>Learn how to create layouts that work on all devices.</p>
+			</div>
+		</section>
+		
+		<!-- Footer Area -->
+		<!-- The CSS will assign this to the "footer" grid area -->
+		<footer class="box foot">
+			<div class="footer-content">
+				<p>&copy; 2025 CVVW Course Materials</p>
+				<p><small>Demonstrating CSS Grid Named Areas</small></p>
+			</div>
+		</footer>
+		
+	</div>
+	
+	<!-- Educational Information Panel -->
+	<div class="info-section">
+		<h2>How Named Grid Areas Work</h2>
+		
+		<div class="code-example">
+			<h3>CSS Grid Template Areas Example:</h3>
+			<pre><code>grid-template-areas:
+  "header  header  header"
+  "nav     main    sidebar"
+  "nav     main    ads"
+  "footer  footer  footer";</code></pre>
+		</div>
+		
+		<div class="explanation">
+			<h3>Key Concepts:</h3>
+			<ul>
+				<li><strong>Visual Layout:</strong> The grid-template-areas property visually represents your layout</li>
+				<li><strong>Area Assignment:</strong> Use grid-area property to assign elements to named areas</li>
+				<li><strong>Responsive Changes:</strong> Different grid-template-areas for different screen sizes</li>
+				<li><strong>Spanning Areas:</strong> Repeat area names to make elements span multiple cells</li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+</html>
